@@ -34,12 +34,12 @@ void AddDialog::Reset(const QString &)
         if (strcmp(QString::number(tempUint).toLocal8Bit().data(),
                    ui->editId->text().toLocal8Bit().data()) == 0 &&
                 tempUint > 0)
-            ui->pushAdd->setEnabled(true);
+            ui->pushAdd->setEnabled(false);
         else
             ui->pushAdd->setEnabled(false);
     }
     else
-        ui->pushAdd->setEnabled(false);
+        ui->pushAdd->setEnabled(true);
 }
 
 AddDialog::~AddDialog()
@@ -64,7 +64,7 @@ void AddDialog::Insert()
         ui->editFullname->setFocus();
         ui->editId->setText("");
     }
-    else
+   if else
     {
         ui->pushAdd->setEnabled(false);
         ui->editFullname->setText("");
